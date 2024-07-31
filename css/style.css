@@ -314,37 +314,40 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff !important;
 }
 
+/* Updated styles for the About Me section */
 .info {
-  margin: 0;
-  padding: 0;
-  width: 90%;
-  float: left;
-}
-@media screen and (max-width: 768px) {
-  .info {
-    margin-bottom: 3em;
-  }
-}
-.info li {
-  width: 100%;
-  float: left;
   list-style: none;
-  padding: 10px 0;
+  padding: 0;
+  margin: 0;
 }
-.info li:first-child {
-  padding-top: 0;
+
+.info li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
-.info li .first-block {
-  width: 40%;
-  display: inline-block;
-  float: left;
-  color: #000;
+
+.info .first-block {
   font-weight: bold;
+  flex: 1;
 }
-.info li .second-block {
-  width: 60%;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
+
+.info .second-block {
+  flex: 2;
+  word-wrap: break-word; /* Ensure long text wraps properly */
+}
+
+/* Additional styles for better layout and responsiveness */
+@media (max-width: 768px) {
+  .info li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info .first-block, .info .second-block {
+    flex: none;
+    width: 100%;
+  }
 }
 
 .fh5co-social-icons {
@@ -636,6 +639,7 @@ h1, h2, h3, h4, h5, h6, figure {
     right: auto;
   }
 }
+
 .progress-wrap {
   width: 100%;
   float: left;
